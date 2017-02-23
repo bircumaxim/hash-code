@@ -25,4 +25,13 @@ public class Request {
     public int getEndPoint() {
         return endPoint;
     }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "videoId=" + videoId +
+                ", requests=" + requests +
+                ", endPoint=" + endPoint +
+                '}';
+    }
 }

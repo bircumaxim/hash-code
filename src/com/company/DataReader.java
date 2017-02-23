@@ -25,8 +25,10 @@ public class DataReader {
             }
 
             for (int i = 0; i < data.getNumberOfEndpoints(); i++) {
-                EndPoint endPoint = new EndPoint(i,scanner.nextInt(),scanner.nextInt());
-                for (int j = 0; j < endPoint.getCacheServers(); j++) {
+                int dataServerLatency = scanner.nextInt();
+                int cacheServers = scanner.nextInt();
+                EndPoint endPoint = new EndPoint(i, dataServerLatency, data.getNumberOfCacheServers());
+                for (int j = 0; j < cacheServers; j++) {
                     int cacheServer = scanner.nextInt();
                     int cacheLatency = scanner.nextInt();
                     endPoint.setLatency(cacheServer,cacheLatency);
