@@ -76,6 +76,10 @@ public class Data {
         requests[id] = request;
     }
 
+    public Request[] getRequests() {
+        return requests;
+    }
+
     public Request getRequest(int id){
         return requests[id];
     }
