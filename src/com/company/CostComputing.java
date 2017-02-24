@@ -55,6 +55,18 @@ public class CostComputing {
         return matrix;
     }
 
+    public int[] getTotalRequestsForVideos(){
+        int size = database.getVideos().size();
+        int[] requests = new int[size];
+
+        database.getRequestDescriptors()
+                .forEach(requestDescriptor -> {
+                    requests[requestDescriptor.getVideo().getId()] += requestDescriptor.getCount();
+                });
+
+        return requests;
+    }
+
     private int getCacheServersSize() {
         return database.getCacheServers().size();
     }
